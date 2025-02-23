@@ -4,7 +4,7 @@ on:
     inputs:
       BRANCH:
         description: Kernel branch
-        default: 'linux-4.19.y'
+        default: 'linux-4.19.y-cip'
         required: true
       BUILD_TARGET:
         description: 'Build target'
@@ -17,11 +17,11 @@ on:
       TARGET_DEVICE:
         description: 'Target Device'
         required: true
-        default: 'a03s'
+        default: 'a04e'
         type: choice
         options:
-          - a03s
           - a04e
+          - a03s
           - m04
       TARGET_BINARY:
         description: 'Target Binary'
@@ -75,7 +75,7 @@ jobs:
         disable-web-page-preview: true
         parse-mode: html
         message: |
-          @${{ github.actor }} triggered a kernel build!
+          <a href="https://github.com/rsuntk">@${{ github.actor }}</a> triggered a kernel build!
 
           <b>Start:</b> ${{ steps.rundate.outputs.REPO_DATE }}
           <b>Target Binary:</b> ${{ github.event.inputs.TARGET_BINARY }}
